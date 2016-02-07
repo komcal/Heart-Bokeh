@@ -1,0 +1,19 @@
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+      width: 70%;
+      margin: auto;
+}
+.header{
+  background: #FFC0CB;
+  padding: 20px 0;
+  margin-bottom: 20px;
+}
+body{
+  background-color: #FFCCCC;
+}
+button {
+  margin-top: 20px;
+}
+.text{
+  text-align: center;
+}

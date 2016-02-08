@@ -4,9 +4,9 @@ exports.render = function (req, res){
 exports.up = function(req, res){
   var lwip = require('lwip');
   var fs = require('fs');
-  res.render('uploaded');
   var pathPic = 'uploads/'+req.file.filename;
-  res.status(204).end();
+  var newPic = 'uploads/n'+req.file.filename;
+  console.log(newPic);
   require('lwip').open(pathPic, function(err, image){
     if(err){
       console.log(err);
@@ -18,5 +18,7 @@ exports.up = function(req, res){
       });
     }
   });
-
+  res.render('uploaded',{
+    'pic': newPic
+  });
 }

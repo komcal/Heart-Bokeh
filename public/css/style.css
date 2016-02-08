@@ -7,6 +7,7 @@
   background: #FFC0CB;
   padding: 20px 0;
   margin-bottom: 20px;
+  text-align: center;
 }
 body{
   background-color: #FFCCCC;
@@ -18,8 +19,6 @@ button {
   text-align: center;
 }
 #blah{
-  height: 500px;
-  width: 500px;
 }
 .container{
   text-align: center;
@@ -33,4 +32,15 @@ p{
 .btn{
   padding-left: 20px;
   padding-right: 20px;
+}
+#imgBox{
+    height: 500px;
+    width: 500px;
+    border: solid 1px black;
+    display: flex;
+    align-items: center;
+    background-color: white;
+}
+.header > a {
+  display: inline-block;
 }

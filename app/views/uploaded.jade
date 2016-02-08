@@ -1,6 +1,10 @@
 html(lang="en")
 head
-  meta(charset="UTF-8")
-  title Document
+  include ./header.jade  
 body
-  h1 Upload complete
+  include ./head.jade
+  .container
+    div#imgBox.center-block
+      img#blah.img-responsive(src=pic,alt="")
+    button.btn-lg.btn-danger.btn-block(onclick="location.href = 'http://localhost:3000/upload';") เล่นใหม่อีกครั้ง
+  script(type="text/javascript", src="/js/script.js")

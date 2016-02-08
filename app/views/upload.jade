@@ -4,12 +4,11 @@ head
 body
   include ./head.jade
   .container
-    div#imgBox.center-block
-      img#blah.img-responsive(src="/pic/drop.jpg",alt="")
+    div#uploadBox.center-block(onclick='Browse()')
+      img#blah.img-responsive(src="",alt="")
     form(method="post",enctype="multipart/form-data",action="/uploaded")
       p
-        input#imgInp(type="file",name="upl",style='display: none;')
-        input.btn.btn-default(type='button', value='Upload file', onclick='Browse()')        
+        input#imgInp(type="file",name="upl",style='display: none;')     
       p
         input.btn-lg.btn-danger.btn(type="submit", value='Make Bokeh')
   script(type="text/javascript", src="/js/script.js")

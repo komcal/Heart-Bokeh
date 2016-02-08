@@ -26,6 +26,9 @@ button {
 #imgInp{
   display: inline-block;
 }
+#blah:hover{
+  opacity: 0.3;
+}
 p{
   margin-top: 10px;
 }
@@ -33,13 +36,20 @@ p{
   padding-left: 20px;
   padding-right: 20px;
 }
-#imgBox{
+#imgBox, #uploadBox{
     height: 500px;
     width: 500px;
     border: solid 1px black;
     display: flex;
     align-items: center;
     background-color: white;
+}
+#uploadBox{
+  background-image: url("/pic/upload.jpg");
+}
+#uploadBox:hover{
+  background-image: url("/pic/uploadhover.jpg");
+  cursor: pointer;
 }
 .header > a {
   display: inline-block;

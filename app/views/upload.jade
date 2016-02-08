@@ -1,14 +1,14 @@
 html(lang="en")
 head
-  meta(charset="UTF-8")
-  title Document
+  include ./header.jade  
 body
-  form(method="post",enctype="multipart/form-data",action="/uploaded")
-    p
-      img#blah(src="#",alt="my img")
-    p
-      input#imgInp(type="file",name="upl")
-    p
-      input(type="submit")
-      script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js")
+  include ./head.jade
+  .container
+    img#blah.img-responsive.center-block(src="/pic/drop.jpg",alt="")
+    form(method="post",enctype="multipart/form-data",action="/uploaded")
+      p
+        input#imgInp(type="file",name="upl",style='display: none;')
+        input.btn.btn-danger(type='button', value='Upload file', onclick='Browse()')        
+      p
+        input.btn-lg.btn-danger.btn(type="submit", value='Make Bokeh')
   script(type="text/javascript", src="/js/script.js")

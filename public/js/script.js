@@ -13,3 +13,6 @@ function readURL(input) {
 $("#imgInp").change(function(){
     readURL(this);
 });
+function Browse(){
+  document.getElementById('imgInp').click();
+}

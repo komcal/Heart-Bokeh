@@ -17,3 +17,20 @@ button {
 .text{
   text-align: center;
 }
+#blah{
+  height: 500px;
+  width: 500px;
+}
+.container{
+  text-align: center;
+}
+#imgInp{
+  display: inline-block;
+}
+p{
+  margin-top: 10px;
+}
+.btn{
+  padding-left: 20px;
+  padding-right: 20px;
+}

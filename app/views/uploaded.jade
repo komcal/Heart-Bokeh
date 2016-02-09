@@ -6,5 +6,11 @@ body
   .container
     div#imgBox.center-block
       img#blah.img-responsive(src=pic,alt="")
-    button.btn-lg.btn-danger.btn-block(onclick="location.href = 'http://localhost:3000/upload';") เล่นใหม่อีกครั้ง
+    .row
+      .col-sm-4
+        button.btn-lg.btn-default.btn-block Save image
+      .col-sm-4
+        button.btn-lg.btn-primary.btn-block Share
+      .col-sm-4
+        button.btn-lg.btn-danger.btn-block(onclick="location.href = 'http://localhost:3000/upload';") Play again
   script(type="text/javascript", src="/js/script.js")

@@ -7,6 +7,7 @@ function readURL(input) {
             $('#blah').attr('src', e.target.result);
         }
         reader.readAsDataURL(input.files[0]);
+        $('#sendBtn').css('display','inline-block');
     }
 }
 

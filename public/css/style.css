@@ -5,7 +5,7 @@
 }
 .header{
   background: #FFC0CB;
-  padding: 20px 0;
+  padding: 10px 0;
   margin-bottom: 20px;
   text-align: center;
 }
@@ -46,6 +46,8 @@ p{
 }
 #uploadBox{
   background-image: url("/pic/upload.jpg");
+  background-repeat:no-repeat;
+  background-position:center center;
 }
 #uploadBox:hover{
   background-image: url("/pic/uploadhover.jpg");

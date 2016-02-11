@@ -3,6 +3,7 @@ head
   include ./header.jade  
 body
   include ./head.jade
+  -var url = 'window.location.href';
   .container
     div#imgBox.center-block
       img#blah.img-responsive(src=pic,alt="")
@@ -10,7 +11,7 @@ body
       .col-sm-4
         button.btn-lg.btn-default.btn-block Save image
       .col-sm-4
-        button.btn-lg.btn-primary.btn-block Share
+        button.fb-share-button.btn-lg.btn-primary.btn-block(data-href= url, data-layout='link')
       .col-sm-4
         button.btn-lg.btn-danger.btn-block(onclick="location.href = 'http://localhost:3000/upload';") Play again
   script(type="text/javascript", src="/js/script.js")

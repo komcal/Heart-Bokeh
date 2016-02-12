@@ -85,5 +85,12 @@ p{
 #footer{
   padding: 20px 0;
   background-color: #FFC0CB;
-  
+
+}
+i:hover{
+  cursor: pointer;
+  color: black;
+}
+#footer > *{
+  color: white;
 }

@@ -6,7 +6,7 @@ body
   -var url = 'window.location.href';
   .container
     div#imgBox.center-block
-      img#blah.img-responsive(src=pic,alt="")
+      img.img-responsive(src=pic,alt="")
     .row
       .col-sm-4
         button.btn-lg.btn-default.btn-block Save image
@@ -16,3 +16,4 @@ body
         button.btn-lg.btn-danger.btn-block(onclick="location.href = './upload';") Play again
     include ./fbcomment.jade
   script(type="text/javascript", src="/js/script.js")
+  include ./footer.jade

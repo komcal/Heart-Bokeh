@@ -6,7 +6,7 @@ exports.up = function(req, res){
   var fs = require('fs');
   var pathPic = 'uploads/'+req.file.filename;
   console.log(pathPic);
-  
+
   var newPicFileName = 'new_resize_'+req.file.filename;
   var newPic = 'uploads/' + newPicFileName.split('.')[0] + '.png';
 
@@ -31,10 +31,10 @@ exports.up = function(req, res){
               'pic': './' + newPic.replace('uploads', 'downloads') // DeBug :)
             });
           });
-          
+
         });
       });
     }
   });
-  
+
 }

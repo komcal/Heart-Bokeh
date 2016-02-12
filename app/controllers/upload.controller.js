@@ -5,10 +5,12 @@ exports.up = function(req, res){
   var lwip = require('lwip');
   var fs = require('fs');
   var pathPic = 'uploads/'+req.file.filename;
-  var newPic = 'uploads/new_resize_'+req.file.filename;
-  newPic = newPic.split('.')[0] + '.png';
-  console.log(newPic);
-  require('lwip').open(pathPic, function(err, image){
+  
+  var newPicFileName = 'new_resize_'+req.file.filename;
+  var newPic = 'uploads/' + newPicFileName + '.png';
+
+  var makebokeh = require('./makebokeh.controller');
+  lwip.open(pathPic, function(err, image){
     if(err){
       console.log(err);
     }else{
@@ -20,11 +22,16 @@ exports.up = function(req, res){
       image.scale(ratio,function(err, image){
         image.writeFile(newPic, 'png', {compression : "high", interlaced : false, transparency: 'auto'}, function(err) {
           fs.unlinkSync(pathPic);
+
+          makebokeh.exec(newPicFileName, function() {
+            res.render('finbokeh',{
+              'pic': './' + newPicFileName
+            });
+          });
+          
         });
       });
     }
   });
-  res.render('uploaded',{
-    'pic': newPic
-  });
+  
 }

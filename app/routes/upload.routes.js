@@ -13,10 +13,10 @@ module.exports = function(app){
   app.post('/uploaded',multer({
       storage: storage,
       limits: {
-       fileSize: 1000*150,
+       fileSize: 1000*1000*10, // not sure 10 MB 
        files: 1,
        fields: 1
-          }
+      }
   })
   .single('upl'),upload.up);
 }

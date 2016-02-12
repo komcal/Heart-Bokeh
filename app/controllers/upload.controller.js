@@ -5,11 +5,13 @@ exports.up = function(req, res){
   var lwip = require('lwip');
   var fs = require('fs');
   var pathPic = 'uploads/'+req.file.filename;
+  console.log(pathPic);
   
   var newPicFileName = 'new_resize_'+req.file.filename;
-  var newPic = 'uploads/' + newPicFileName + '.png';
+  var newPic = 'uploads/' + newPicFileName.split('.')[0] + '.png';
 
   var makebokeh = require('./makebokeh.controller');
+
   lwip.open(pathPic, function(err, image){
     if(err){
       console.log(err);
@@ -19,13 +21,14 @@ exports.up = function(req, res){
       var widthRatio =  501 / imageWidth;
       var heightRatio = 501 / imageHeight;
       var ratio = Math.min(widthRatio, heightRatio);
+
       image.scale(ratio,function(err, image){
         image.writeFile(newPic, 'png', {compression : "high", interlaced : false, transparency: 'auto'}, function(err) {
           fs.unlinkSync(pathPic);
 
           makebokeh.exec(newPicFileName, function() {
             res.render('finbokeh',{
-              'pic': './' + newPicFileName
+              'pic': './' + newPic.replace('uploads', 'downloads') // DeBug :)
             });
           });
           

@@ -10,7 +10,7 @@ module.exports = function(app){
     cb(null, Date.now() + '.jpg')
   }
 });
-  app.post('/uploaded',multer({
+  app.post('/finbokeh',multer({
       storage: storage,
       limits: {
        fileSize: 1000*1000*10, // not sure 10 MB 

@@ -8,7 +8,8 @@ exports.up = function(req, res){
   console.log(pathPic);
 
   var newPicFileName = 'new_resize_'+req.file.filename;
-  var newPic = 'uploads/' + newPicFileName.split('.')[0] + '.png';
+  newPicFileName = newPicFileName.split('.')[0] + '.png';
+  var newPic = 'uploads/' + newPicFileName;
 
   var makebokeh = require('./makebokeh.controller');
 

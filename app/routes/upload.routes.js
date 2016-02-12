@@ -4,7 +4,6 @@ module.exports = function(app){
   var mime = require('mime');
   app.get('/upload',upload.render);
   var storage = multer.diskStorage({
-<<<<<<< HEAD
     destination: function (req, file, cb) {
       cb(null, './uploads/')
     },

@@ -64,6 +64,8 @@ p{
   max-width: 80%;
   margin-left: auto;
   margin-right: auto;
+  display: flex;
+  align-items: center;
 }
 .button{
   width: 70%;
@@ -74,6 +76,7 @@ p{
   }
   #myCarousel{
     max-width: 100%;
+    height: 50%;
   }
   .item{
     max-height: 500px;

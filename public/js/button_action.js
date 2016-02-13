@@ -29,7 +29,7 @@ function downloadImage() {
 function shareOnFacebook() {
     FB.ui({
             method: 'feed',
-            link: 'http://research27.ml:3000',
+            link: './',
             name: "Heart Bokeh",
             description: "มาสร้างูป โบเก้ หัวใจสวยๆ ทำให้รูปของคุณเต็มไปด้วยความรัก กันเลยที่นี่",
             picture: pic,

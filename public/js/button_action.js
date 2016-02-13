@@ -9,13 +9,29 @@ function downloadImage() {
 
 function shareOnFacebook() {
     var pic = document.getElementById('imgShow').src;
+
+    window.fbAsyncInit = function() {
+        FB.init({
+                appId      : '1065330750192936',
+                xfbml      : true,
+                version    : 'v2.5'
+        });
+    };
+
+    (function(d, s, id){
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) {return;}
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+
     FB.ui({
             method: 'feed',
             link: 'http://research27.ml:3000',
             name: "Heart Bokeh",
             description: "มาสร้างูป โบเก้ หัวใจสวยๆ ทำให้รูปของคุณเต็มไปด้วยความรัก กันเลยที่นี่",
             picture: pic,
-            //picture: "http://research27.ml:3000/game1/game-meeting-result-1.png",
             display: 'popup'
     }, function (response) {
             if (response) {

@@ -17,8 +17,8 @@ exports.up = function(req, res){
     }else{
       var imageWidth = image.width();
       var imageHeight = image.height();
-      var widthRatio =  501 / imageWidth;
-      var heightRatio = 501 / imageHeight;
+      var widthRatio =  700 / imageWidth;
+      var heightRatio = 700 / imageHeight;
       var ratio = Math.min(widthRatio, heightRatio);
 
       image.scale(ratio,function(err, image){

@@ -6,22 +6,23 @@ body
   -var url = 'window.location.href';
   .container
     div#imgBox.center-block
-      img.img-responsive(src=pic,alt="")
+      img#imgShow.img-responsive(src=pic,alt="")
 
     .row.center-block
       .col-sm-4.col-sm-offset-4
         button.btn-lg.btn-success.btn-block(onclick="location.href = './upload';") <i class="fa fa-repeat fa-lg"></i> Play again
     
       .col-sm-4.col-sm-offset-4
-        button.btn-lg.btn-danger.btn-block <i class="fa fa-download fa-lg"></i> Download Image
+        button.btn-lg.btn-danger.btn-block(onclick='downloadImage()') <i class="fa fa-download fa-lg"></i> Download Image
     
       .col-sm-4.col-sm-offset-4
-        button.btn-lg.btn-primary.btn-block(data-href= url, data-layout='link') <i class="fa fa-facebook fa-lg"></i> Share on Facebook
+        button.btn-lg.btn-primary.btn-block(data-href= url, data-layout='link' onclick='shareOnFacebook()') <i class="fa fa-facebook fa-lg"></i> Share on Facebook
     
       .col-sm-4.col-sm-offset-4
-        button.btn-lg.btn-info.btn-block(data-href= url, data-layout='link') <i class="fa fa-twitter fa-lg"></i> Share on Twitter
+        button.btn-lg.btn-info.btn-block(data-href= url, data-layout='link' onclick='shareOnTwitter()') <i class="fa fa-twitter fa-lg"></i> Share on Twitter
     <br><br>
     .row.center-block
       include ./fbcomment.jade
   script(type="text/javascript", src="/js/script.js")
+  script(type="text/javascript", src="/js/button_action.js")
   include ./footer.jade

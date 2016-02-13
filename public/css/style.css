@@ -100,3 +100,8 @@ img {
   margin-left: auto;
   margin-right: auto;
 }
+
+#facebookCommentDiv {
+  margin-top: 5%;
+  background-color: white;
+}

@@ -43,6 +43,7 @@ p{
     display: flex;
     align-items: center;
     background-color: white;
+    text-align: center;
 }
 #uploadBox{
   background-image: url("/pic/upload.jpg");
@@ -93,4 +94,9 @@ i:hover{
 }
 #footer > *{
   color: white;
+}
+img {
+  max-height: 100%;
+  margin-left: auto;
+  margin-right: auto;
 }

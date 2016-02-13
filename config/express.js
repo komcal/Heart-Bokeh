@@ -10,7 +10,10 @@ module.exports = function(){
   app.set('view engine', 'jade');
 	app.use(express.static('./public'));
 	app.use('/downloads', express.static('downloads'));
-	// app.use('/uploads', express.static('uploads')); // for test
+	var env = process.env.NODE_ENV || 'development';
+	if (env == 'development') {
+		app.use('/uploads', express.static('uploads')); // for test	
+	}
 	require('../app/routes/index.routes')(app);
   require('../app/routes/upload.routes')(app);
 

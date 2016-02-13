@@ -5,7 +5,8 @@ body
   include ./head.jade
   .container
     .text
-      p=message
+      p ความรักอยู่รอบตัวของเรา
+      p มาสร้างรูปภาพของคุณ ให้เต็มเปี่ยมไปด้วยความรัก
     #myCarousel.carousel.slide(data-ride='carousel')
       ol.carousel-indicators
         li.active(data-target='#myCarousel', data-slide-to='0')
@@ -30,6 +31,6 @@ body
         span.glyphicon.glyphicon-chevron-right(aria-hidden='true')
         span.sr-only Next
     a(href= nexpage)
-      button.btn-lg.btn-danger.button(onclick="location.href = './upload';") สร้างรูปโบเก้ของคุณ
+      button.btn-lg.btn-danger.button(onclick="location.href = './upload';") สร้างภาพแห่งความรักของคุณ
     include ./fbcomment.jade
   include ./footer.jade

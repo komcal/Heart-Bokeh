@@ -4,7 +4,7 @@
       margin: auto;
 }
 .header{
-  background: #FFC0CB;
+  background: #f5a8b5;
   padding: 10px 0;
   margin-bottom: 20px;
   text-align: center;
@@ -40,11 +40,11 @@ p{
 #imgBox, #uploadBox{
     height: 400px;
     width: 400px;
-    border: solid 1px black;
     display: flex;
     align-items: center;
     background-color: white;
     text-align: center;
+    box-shadow: 5px 5px 4px #959393;
 }
 #uploadBox{
   background-image: url("/pic/upload.jpg");
@@ -71,6 +71,38 @@ p{
 .button{
   width: 70%;
 }
+#footer{
+  padding: 15px 0;
+  background-color: #FFC0CB;
+
+}
+#footer > .container > a > h5{
+  display: inline-block;
+  padding: 0 3px;
+  color: white;
+}
+a:visited {
+    text-decoration: none;
+}
+i:hover{
+  cursor: pointer;
+  color: black;
+}
+#footer > *{
+  color: white;
+}
+img {
+  max-height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#facebookCommentDiv {
+  margin-top: 5%;
+  margin-bottom: 10px;
+  background-color: white;
+}
+
 @media screen and (max-width: 800px) {
   .text{
     font-size: 20px;
@@ -89,26 +121,4 @@ p{
       height: 300px;
       width: 300px;
   }
-}
-#footer{
-  padding: 20px 0;
-  background-color: #FFC0CB;
-
-}
-i:hover{
-  cursor: pointer;
-  color: black;
-}
-#footer > *{
-  color: white;
-}
-img {
-  max-height: 100%;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-#facebookCommentDiv {
-  margin-top: 5%;
-  background-color: white;
 }

@@ -1,0 +1,187 @@
+<%
+		console.log("open game page");
+        var img;
+        if (user.provider == 'facebook') {
+            img = "https://graph.facebook.com/" + user.id + "/picture?width=287&height=287";
+        }
+        else if (user.provider == 'twitter') {
+            img = user.photos[0].value.split("_").slice(0, -1).join("_")+".jpg";
+        }
+        else if (user.provider == 'google') {
+            img = user.photos[0].value.split('?').slice(0, -1).join("?");
+        }
+%>
+<%
+var numImage = Math.floor((Math.random() * 10) % 7 + 1);
+%>
+<!DOCTYPE html>
+<html>
+    <!-- MEMO: update me with `git checkout gh-pages && git merge master && git push origin gh-pages` -->
+    <head>
+        <meta charset="utf-8">
+        <title>NodeAuthen + Bootstrap Material</title>
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://fezvrasta.github.io/bootstrap-material-design/dist/css/roboto.min.css" rel="stylesheet">
+        <link href="https://fezvrasta.github.io/bootstrap-material-design/dist/css/material-fullpalette.min.css" rel="stylesheet">
+        <link href="https://fezvrasta.github.io/bootstrap-material-design/dist/css/ripples.min.css" rel="stylesheet">
+        <link href="//fezvrasta.github.io/snackbarjs/dist/snackbar.min.css" rel="stylesheet">
+		<link href="http://lipis.github.io/bootstrap-social/assets/css/font-awesome.css" rel="stylesheet">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+
+        <!--Start Navbar-->
+		<div class="navbar navbar-default">
+            <div class="container">
+				<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+						</button>
+						<a class="navbar-brand" href="/home"><i class="mdi-communication-vpn-key"></i> NodeAuth</a>
+				</div>
+				<div class="navbar-collapse collapse navbar-responsive-collapse">
+					<form class="navbar-form navbar-left">
+							<input type="text" class="form-control col-lg-8" placeholder="Search">
+					</form>
+					<ul class="nav navbar-nav navbar-right">
+						<li class="dropdown">
+                        
+							<a href="bootstrap-elements.html" data-target="#" class="dropdown-toggle" data-toggle="dropdown">
+							<%= user.displayName.split(' ')[0] %>
+                            <img src="<%=img %>" height="27" />
+                            <b class="caret"></b>
+                            </a>
+							<ul class="dropdown-menu">
+								<li><a href="/profile">Profile</a></li>
+								<li><a href="javascript:void(0)">Setting</a></li>
+								<li class="divider"></li>
+								<li><a href="/logout">Logout</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+            </div>
+		</div>
+		<!--End Navbar-->
+
+
+        <div class="container">
+
+
+            <!-- Containers ================================================== -->
+            <div class="bs-docs-section">
+
+                <div class="row">
+                    <div class="col-lg-12">
+
+
+
+						<% if (gameid == 1) { %> <!-- Edit Here Reqire model module.export to make data + gen Javascript + share-->
+                        <div class="bs-component">
+                            <div class="jumbotron text-center">
+								<h1>ประชุมครั้งถัดไปในอีก...</h1> <!-- Edit Here -->
+                                <div class="row ">
+                                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 col-sm-12 col-xs-12">
+									<img id="myimg" class="img-responsive" src="/game1/game-meeting-result-<%= numImage %>.png" /> <!-- EditHere -->
+                                </div>
+                                
+							<br>
+							<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 col-sm-12 col-xs-12">
+								<a href="javascript:history.go(0)" class="btn btn-lg btn-success btn-block" onclick=""><i class="mdi-action-autorenew"></i>  Play Again</a>
+								<a href="" id="shareFB" class="btn btn-lg btn-material-blue-800 btn-block"><i class="fa fa-facebook fa-lg"></i>  Share Facebook</a>
+								<a href="" class="btn btn-lg btn-info btn-block disabled"><i class="fa fa-twitter fa-lg"></i>  Share Twitter</a>
+								<a href="" class="btn btn-lg btn-danger btn-block disabled"><i class="fa fa-google fa-lg"></i>  Share Google+</a>
+                            </div>
+						</div>
+                            </div>
+                        </div>
+						<% } else if (gameid == 2) { %>
+							<% console.log("open game 2"); %>
+						<% } %>
+
+
+
+
+
+                    </div>
+                </div>
+
+
+        <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+        <script src="https://fezvrasta.github.io/bootstrap-material-design/dist/js/ripples.min.js"></script>
+        <script src="https://fezvrasta.github.io/bootstrap-material-design/dist/js/material.min.js"></script>
+        <script src="//fezvrasta.github.io/snackbarjs/dist/snackbar.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/noUiSlider/6.2.0/jquery.nouislider.min.js"></script>
+        <script>
+            $(function() {
+                $.material.init();
+                $(".shor").noUiSlider({
+                    start: 40,
+                    connect: "lower",
+                    range: {
+                        min: 0,
+                        max: 100
+                    }
+                });
+
+                $(".svert").noUiSlider({
+                    orientation: "vertical",
+                    start: 40,
+                    connect: "lower",
+                    range: {
+                        min: 0,
+                        max: 100
+                    }
+                });
+            });
+        </script>
+		<script>
+						$("#shareFB").click(function(event){
+							event.preventDefault();
+							shareFacebook();
+						});
+		</script>
+				<script>
+					console.log(document.getElementById('myimg').src);
+					var pic = document.getElementById('myimg').src;
+						window.fbAsyncInit = function() {
+								FB.init({
+										appId      : '735913326525124',
+										xfbml      : true,
+										version    : 'v2.3'
+								});
+						};
+
+						(function(d, s, id){
+								var js, fjs = d.getElementsByTagName(s)[0];
+								if (d.getElementById(id)) {return;}
+								js = d.createElement(s); js.id = id;
+								js.src = "//connect.facebook.net/en_US/sdk.js";
+								fjs.parentNode.insertBefore(js, fjs);
+						}(document, 'script', 'facebook-jssdk'));
+
+						function shareFacebook() {
+								FB.ui({
+										method: 'feed',
+										link: 'http://research27.ml:3000/game/1',
+										name: "NewKru Meeting",
+										description: "คุณจะประชุมครั้งถัดไปในอีก...?",
+										picture: pic,
+										//picture: "http://research27.ml:3000/game1/game-meeting-result-1.png",
+										display: 'popup'
+								}, function (response) {
+										if (response) {
+												alert('Success');
+										} else {
+												alert("Fail");
+										}
+								});
+						}
+
+				</script>
+    </body>
+</html>

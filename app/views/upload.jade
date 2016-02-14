@@ -6,11 +6,11 @@ body
   .container
     div#uploadBox.center-block(onclick='Browse()')
       img#blah.img-responsive(src="",alt="")
-    form(method="post",enctype="multipart/form-data",action="/finbokeh")
+    form(method="post",enctype="multipart/form-data",action="./finbokeh")
       p
         input#imgInp(type="file",name="upl",style='display: none;')     
       p
         input#sendBtn.btn-lg.btn-danger.button(type="submit", value='รวมพลังแห่งความรัก',style='display: none;')
     include ./fbcomment.jade
-  script(type="text/javascript", src="/js/script.js")
+  script(type="text/javascript", src="./js/script.js")
   include ./footer.jade
